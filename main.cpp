@@ -19,6 +19,8 @@
 #include "./Header/Star.h"
 #include "./Header/Grash.h"
 #include "./Header/Horse.h"
+#include "./Header/Background.h"
+
 
 int planeVisible = 0, day = 1;
 
@@ -31,44 +33,13 @@ void init(void)
     gluOrtho2D(0.0,1440.0,0.0,1024.0); // Orthographic representation; multiply the current matrix by an orthographic matrix 2D= left right,bottom,top equivalent near=-1,far=1
 }
 
-void skyBackground()
-{
-    if(day)
-        glColor3f(0.0, 0.898, 0.898);
-    else
-        glColor3f(0.0, 0.0, 0.0);
-
-    glBegin(GL_POLYGON);
-    glVertex2f(0.0, 662.0);
-    glVertex2f(1440.0, 662.0);
-    glVertex2f(1440.0, 1024.0);
-    glVertex2f(0.0, 1024.0);
-    glEnd();
-}
-
-void greenGrashBackground()
-{
-    if(day)
-        glColor3f(0.0, 0.898, 0.0);
-    else
-        glColor3f(0.0, 0.3019, 0.0);
-
-    glBegin(GL_POLYGON);
-    glVertex2f(0.0, 300.0);
-    glVertex2f(1440.0, 300.0);
-    glVertex2f(1440.0, 662.0);
-    glVertex2f(0.0, 662.0);
-    glEnd();
-}
-
-
 void Draw()
 {
     glClear(GL_COLOR_BUFFER_BIT);
 
-    //All Background
-    skyBackground();
-    greenGrashBackground();
+    //From Background.h file
+    skyBackground(day);
+    greenGrashBackground(day);
 
     //From Grash.h file
     greenGrash();
@@ -220,28 +191,59 @@ void main_menu(int index)
 
 int main(int argc,char **argv)
 {
-    glutInit(&argc,argv);
-    glutInitDisplayMode ( GLUT_RGB | GLUT_SINGLE  );
-    glutInitWindowPosition(0,0);
-    glutInitWindowSize(glutGet(GLUT_SCREEN_WIDTH),glutGet(GLUT_SCREEN_HEIGHT));
-    glutCreateWindow("Final Project");
-    init();
-    glutDisplayFunc(Draw);
+    printf("************************************Farm Land***********************************\n");
+    printf("********************************************************************************\n");
+    printf("********************************************************************************\n");
+    printf("\n");
+    printf("Team Members\n");
+    printf("Name: MD. Tasluf Morshed & ID: 191-15-12089\n");
+    printf("Name: MD. Assadujjaman Tilok & ID: 191-15-12594\n");
+    printf("\n");
+    printf("Instructions\n");
+    printf("\n");
+    printf("1. Press 't' to run the car\n");
+    printf("2. Press 'r' for red signal in the trafic light\n");
+    printf("3. Press 'g' for green signal in the trafic light\n");
+    printf("4. Press 'd' for day view\n");
+    printf("5. Press 'n' for night view\n");
+    printf("6. Press 'KEY_UP' to move the car into up direction\n");
+    printf("7. Press 'KEY_DOWN' to move the car into down direction\n");
+    printf("8. Press 'MOUSE_RIGHT_BUTTON' to view the Main menu\n");
+    printf("\n");
+    printf("Press enter to start");
+    char input;
+    scanf("%c", &input);
+
+    if(input)
+    {
+        glutInit(&argc,argv);
+        glutInitDisplayMode ( GLUT_RGB | GLUT_SINGLE  );
+        glutInitWindowPosition(0,0);
+        glutInitWindowSize(glutGet(GLUT_SCREEN_WIDTH),glutGet(GLUT_SCREEN_HEIGHT));
+        glutCreateWindow("Farm Land");
+        init();
+        glutDisplayFunc(Draw);
 #ifdef _WIN32
-    PlaySound("C:\\Users\\rhyme\\OneDrive\\Documents\\C\\Final Project\\Sound\\Day.wav", NULL, SND_ASYNC | SND_FILENAME | SND_LOOP);
+        PlaySound("C:\\Users\\rhyme\\OneDrive\\Documents\\C\\Final Project\\Sound\\Day.wav", NULL, SND_ASYNC | SND_FILENAME | SND_LOOP);
 #endif
-    glutKeyboardFunc(my_keyboard);
-    glutSpecialFunc(spe_key);
+        glutKeyboardFunc(my_keyboard);
+        glutSpecialFunc(spe_key);
 
-    glutCreateMenu(main_menu);
-    glutAddMenuEntry("Aeroplane",1);
-    glutAddMenuEntry("Star Fall",2);
-    glutAttachMenu(GLUT_RIGHT_BUTTON);
+        glutCreateMenu(main_menu);
+        glutAddMenuEntry("Aeroplane",1);
+        glutAddMenuEntry("Star Fall",2);
+        glutAttachMenu(GLUT_RIGHT_BUTTON);
 
-    glutMainLoop();
+        glutMainLoop();
+    }
+    else
+    {
+        exit(1);
+    }
+
+
     return 0;
 }
-
 
 
 
