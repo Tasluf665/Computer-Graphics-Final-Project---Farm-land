@@ -17,14 +17,14 @@ void singleStar(float lx = 0.0,  float ly = 0.0, float left = 0.0, float up = 0.
 
 void starGoLeft()
 {
-    starTx = starTx + 0.2;
+    starTx = starTx + 0.5;
 
     if (starTx > 900)
     {
         starTx = 0.0;
     }
 
-    starTy -= 0.05;
+    starTy -= 0.1;
 
     if (starTy < -300)
     {

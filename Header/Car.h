@@ -40,7 +40,7 @@ void carGoLeft(){
         carTx = -600.0;
     }
 
-    carWheelSpin += 0.2;
+    carWheelSpin -= 0.2;
 
     glutPostRedisplay();
 }
@@ -59,8 +59,8 @@ void carWheelLineVertical(float lx = 0.0,  float ly = 0.0, float left = 0.0, flo
     glBegin(GL_POLYGON);
     glVertex2f(lx + left, ly + up );
     glVertex2f(lx + 38.0 + left, ly + up );
-    glVertex2f(lx + 38.0 + left, ly + 5.0 + up);
-    glVertex2f(lx + left, ly + 5.0 + up);
+    glVertex2f(lx + 38.0 + left, ly + 4.0 + up);
+    glVertex2f(lx + left, ly + 4.0 + up);
     glEnd();
 }
 
@@ -68,8 +68,8 @@ void carWheelLineHorizontal(float lx = 0.0,  float ly = 0.0, float left = 0.0, f
     glColor3f(1.0, 1.0, 1.0);
     glBegin(GL_POLYGON);
     glVertex2f(lx + left, ly + up );
-    glVertex2f(lx + 5.0 + left, ly + up );
-    glVertex2f(lx + 5.0 + left, ly + 38.0 + up);
+    glVertex2f(lx + 4.0 + left, ly + up );
+    glVertex2f(lx + 4.0 + left, ly + 38.0 + up);
     glVertex2f(lx + left, ly + 38.0 + up);
     glEnd();
 }
