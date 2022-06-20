@@ -1,5 +1,18 @@
 # Computer-Graphics-Final-Project---Farm-land
 11th semester final project. Couse code CSE422.
+
+# Steps
+1. Download all the files form github.
+2. Create a new Glut project in your pc.
+3. Copy the main.cpp file from gitHub and Paste it into the new project.
+4. Copy Header and Sound folder into the new project folder.
+
+# Sound Problem
+You may see some problem in sound Playing. It is because I use full path in the PlaySound function. So the path I have uses may not be same as in your PC. To fix this.
+1. Go to Sound folder of the project.
+2. Copy the full path of the Sound folder.
+3. Paste that path in each PlaySound function of the main.cpp file.
+
 # Instructions
 
 1. Press 't' to run the car
