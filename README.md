@@ -1,5 +1,5 @@
 # Computer-Graphics-Final-Project---Farm-land
-11th semester final project. Couse code CSE422.
+11th semester final project. Course code CSE422.
 
 # Steps
 1. Download all the files form github.
