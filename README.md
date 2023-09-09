@@ -49,9 +49,9 @@ Enjoy exploring the Farm Land project with the following interactive features:
 
 ## Screenshots
 
-![Farm Land Screenshot 1](images/farm-land-screenshot-1.png)
+![Farm Land Screenshot 1](https://github.com/Tasluf665/Computer-Graphics-Final-Project---Farm-land/blob/master/Pic%201.png)
 
-![Farm Land Screenshot 2](images/farm-land-screenshot-2.png)
+![Farm Land Screenshot 2](https://github.com/Tasluf665/Computer-Graphics-Final-Project---Farm-land/blob/master/Pic%202.png)
 
 ## Project Author
 
